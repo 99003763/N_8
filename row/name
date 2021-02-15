@@ -1,1 +1,172 @@
 
+#include<stdio.h>
+#include<math.h>
+
+float degree,radian;
+const float pi =3.14159;
+int input =0;
+
+/*----------------function 1-------------------- */
+
+int get_user_choice()
+{
+int selected_choice;
+scanf("%d",&selected_choice);
+return(selected_choice);
+}
+
+/*----------------function 2-------------------- */
+
+int Check_selected_value(int input)
+{
+while(!((input>=1)||(input<=3)))
+input=get_user_choice();
+}
+
+
+/*----------------function 3-------------------- */
+
+float Degree_to_Radian()
+{
+	int choose_Identity1;
+	int check_Identity1;
+	
+		printf("\nChoose Identity for Performing Function:");
+		printf("\n 1- sin");
+		printf("\n 2- cos");
+		printf("\n 3- tan");
+		printf("\n 4- cosec");
+		printf("\n 5- sec");
+		printf("\n 6- cot");
+		
+		printf("\nEnter the value of angle: ");
+		scanf("%f",&degree);
+
+			choose_Identity1 = get_user_choice();
+
+			check_Identity1 = Check_selected_value(choose_Identity1);
+
+				if(check_Identity1==1)
+				{
+				radian = degree*(pi/180.0);
+				printf("\nsin(%f) = %f",degree,sin(radian));
+				}
+
+				else if(check_Identity1==2)
+				{
+				radian = degree*(pi/180.0);
+				printf("\ncos(%f) = %f",degree,cos(radian));
+				}
+
+				else if(check_Identity1==3)
+				{
+				radian = degree*(pi/180.0);
+				printf("\ntan(%f) = %f",degree,tan(radian));
+				}
+
+				else if(check_Identity1==4)
+				{
+				radian = degree*(pi/180.0);
+				printf("\ncosec(%f) = %f",degree,1/sin(radian));
+				}
+
+				else if(check_Identity1==5)
+				{
+				radian = degree*(pi/180.0);
+				printf("\nsec(%f) = %f",degree,1/cos(radian));
+				}
+
+				else if(check_Identity1==6)
+				{
+				radian = degree*(pi/180.0);
+				printf("\ncot(%f) = %f",degree,1/tan(radian));
+				}
+
+}
+
+/*----------------function 4-------------------- */
+
+float Radian_to_Degree()
+{
+	int choose_Identity2,check_Identity2;
+	
+		printf("\nChoose Identity for Performing Function:");
+		printf("\n 1- sin");
+		printf("\n 2- cos");
+		printf("\n 3- tan");
+		printf("\n 4- cosec");
+		printf("\n 5- sec");
+		printf("\n 6- cot");
+		
+		printf("\nEnter the value of angle: ");
+		scanf("%f",&radian);
+
+			choose_Identity2 = get_user_choice();
+
+			check_Identity2 = Check_selected_value(choose_Identity2);
+
+				if(check_Identity2==1)
+				{
+				degree = radian/(pi/180.0);
+				printf("\nsin(%f) = %f",sin(radian),degree);
+				}
+
+				else if(check_Identity2==2)
+				{
+				degree = radian/(pi/180.0);
+				printf("\ncos(%f) = %f",cos(radian),degree);
+				}
+
+				else if(check_Identity2==3)
+				{
+				degree = radian/(pi/180.0);
+				printf("\ntan(%f) = %f",tan(radian),degree);
+				}
+
+				else if(check_Identity2==4)
+				{
+				degree = radian/(pi/180.0);
+				printf("\ncosec(%f) = %f",1/sin(radian),degree);
+				}
+
+				else if(check_Identity2==5)
+				{
+				degree = radian/(pi/180.0);
+				printf("\nsec(%f) = %f",1/cos(radian),degree);
+				}
+
+				else if(check_Identity2==6)
+				{
+				degree = radian/(pi/180.0);
+				printf("\ncot(%f) = %f",1/tan(radian),degree);
+				}
+}
+
+	int main()
+	{
+        int value;
+		printf("Choose the conversion method:");
+		printf("\n 	1 - Degree to Radian");
+		printf("\n 	2 - Radian to Degree");
+		printf("\n 	3 - Exit\n");
+		scanf("%d",&value);
+
+		input = get_user_choice();
+
+		value = Check_selected_value(input);
+		
+			if(value==1)
+			{
+			Degree_to_Radian();
+
+			}
+			else if(value==2)
+			{
+			Radian_to_Degree();
+
+			}
+			else if(value==3)
+			{
+			printf("GET LOST");
+			}
+	}
